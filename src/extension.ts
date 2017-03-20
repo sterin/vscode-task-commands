@@ -23,7 +23,7 @@ function getTaskNames() : Set<string>
 
 export function activate(context: vscode.ExtensionContext) 
 {
-    const currentTasks = new Map<string,vscode.Disposable>();
+    const currentCommands = new Map<string,vscode.Disposable>();
 
     function registerTask(taskName: string)
     {
@@ -34,7 +34,7 @@ export function activate(context: vscode.ExtensionContext)
             vscode.commands.executeCommand('workbench.action.tasks.runTask', taskName);
         });
 
-        currentTasks.set(taskName, cmd);
+        currentCommands.set(taskName, cmd);
         context.subscriptions.push(cmd);        
     }
 
@@ -42,25 +42,25 @@ export function activate(context: vscode.ExtensionContext)
     {
         const taskNames = getTaskNames();
 
-        const disposables = new Array<string>();
+        const disposed = new Array<string>();
 
-        for( let [t, d] of currentTasks.entries() )
+        for( let [t, d] of currentCommands.entries() )
         {
             if( ! taskNames.has(t) )
             {
                 d.dispose();
-                disposables.push(t);
+                disposed.push(t);
             }
         }
 
-        for( let t of disposables )
+        for( let t of disposed )
         {
-            currentTasks.delete(t);
+            currentCommands.delete(t);
         }
 
         for( let t of taskNames )
         {
-            if( ! currentTasks.has(t) )
+            if( ! currentCommands.has(t) )
             {
                 registerTask(t);
             }
