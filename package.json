@@ -2,7 +2,7 @@
     "name": "task-commands",
     "displayName": "Task Commands",
     "description": "Assign a command to each task in tasks.json, so that shortcuts can be assigned to tasks.",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "publisher": "sterin",
     "repository": "https://github.com/sterin/vscode-task-commands",
     "engines": {
