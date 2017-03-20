@@ -2,9 +2,9 @@
     "name": "task-commands",
     "displayName": "Task Commands",
     "description": "Assign a command to each task in tasks.json, so that shortcuts can be assigned to tasks.",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "publisher": "sterin",
-	"repository": "https://github.com/sterin/vscode-task-commands",
+    "repository": "https://github.com/sterin/vscode-task-commands",
     "engines": {
         "vscode": "^1.10.0"
     },
@@ -15,8 +15,7 @@
         "workspaceContains:.vscode/tasks.json"
     ],
     "main": "./out/src/extension",
-    "contributes": {
-    },
+    "contributes": {},
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
         "compile": "tsc -watch -p ./",
