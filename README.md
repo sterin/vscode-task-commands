@@ -34,7 +34,7 @@ This extension will automatically generate two commands named `task-command.hell
 These commands can now be assigned shortcuts using `keybindings.json`. For example:
 
 ```json
-{
+[
     {
         "key": "f10",
         "command": "task-commands.hello"
