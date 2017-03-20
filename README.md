@@ -1,3 +1,5 @@
+# Irrelevant as of Visual Studio Code 1.10
+
 # Task Commands 
 
 Assigns a command for each task in tasks.json, so that keyboard shortcuts can be assigned for to each task.
